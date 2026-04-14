@@ -139,7 +139,7 @@ def get_ice_servers():
 
     if account_sid and auth_token:
         try:
-            auth = base64.b64encode(f"{account_sid}:{account_token}".encode()).decode()
+            auth = base64.b64encode(f"{account_sid}:{auth_token}".encode()).decode()
             response = requests.post(
                 f"https://api.twilio.com/2010-04-01/Accounts/{account_sid}/Tokens.json",
                 headers={"Authorization": f"Basic {auth}"},
